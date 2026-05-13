@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Next Binge — quick picks for what to watch next." />
+    <title>Next Binge</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Next Binge</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="privacy/index.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <h1 id="hero-title">Find something to watch, fast</h1>
+            <p class="lead">
+              Turn a card for a quick recommendation, save picks to your list, and open details when you want more context.
+            </p>
+            <div class="cta-row">
+              <span class="btn btn-primary" title="Add store links when available">Get the app</span>
+              <span class="btn btn-secondary" title="Add store links when available">Watch trailer</span>
+            </div>
+            <p class="btn-note">Store buttons are placeholders — link Google Play / App Store when ready.</p>
+          </div>
+          <div class="mockup">
+            <img
+              src="images/placeholder-app-hero.svg"
+              width="560"
+              height="620"
+              alt="Placeholder for Next Binge app screenshot"
+            />
+          </div>
+        </section>
+
+        <section class="features" aria-labelledby="feat-title">
+          <h2 id="feat-title">What you can do</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Quick pick</h3>
+              <p>Flip one card for a title matched to your language and preferences.</p>
+            </article>
+            <article class="card">
+              <h3>Save &amp; details</h3>
+              <p>Bookmark picks and jump into richer info when you need it.</p>
+            </article>
+            <article class="card">
+              <h3>Shake for another</h3>
+              <p>On supported devices, shake for another card without hunting for a button.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="screens" aria-labelledby="screens-title">
+          <h2 id="screens-title">In the app</h2>
+          <p>Marketing or store screenshots go here. Using placeholders until real captures are added.</p>
+          <div class="screen-grid">
+            <img src="images/placeholder-app-thumb.svg" width="320" height="560" alt="Placeholder app screen 1" />
+            <img src="images/placeholder-app-thumb.svg" width="320" height="560" alt="Placeholder app screen 2" />
+            <img src="images/placeholder-app-thumb.svg" width="320" height="560" alt="Placeholder app screen 3" />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="y"></span> Next Binge ·
+        <a href="privacy/index.html">Privacy policy</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

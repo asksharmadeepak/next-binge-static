@@ -21,14 +21,10 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="header-inner">
+      <div class="shell">
         <a class="brand" href="index.html">
-          <img
-            class="brand-wordmark"
-            src="images/logo-wordmark.png"
-            alt="NextBinge"
-            height="32"
-          />
+          <img class="brand-icon" src="images/app-icon.png" width="40" height="40" alt="" />
+          <span class="brand-name">NextBinge</span>
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="index.html">Home</a>
@@ -43,117 +39,119 @@
       </div>
     </header>
 
-    <main>
-      <div class="wrap">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <p class="eyebrow">WhatWatchNext</p>
-            <h1 id="hero-title">Find something to watch, fast</h1>
-            <p class="lead">
-              Quick picks for what to watch — powered by <strong>NextBinge</strong>. Flip one card,
-              shake for another, save what you like.
-            </p>
-            <div class="cta-row">
-              <a
-                class="btn btn-primary"
-                href="https://play.google.com/store/apps/details?id=com.nextbinge.app"
-                rel="noopener noreferrer"
-                >Get NextBinge on Google Play</a
-              >
-              <a class="btn btn-secondary" href="privacy/index.html">Privacy policy</a>
-            </div>
-          </div>
-          <div class="mockup">
-            <img
-              class="phone-shot"
-              src="images/screen-home-pick.png"
-              width="360"
-              height="780"
-              alt="NextBinge home screen showing tonight’s pick"
-            />
-          </div>
-        </section>
-
-        <section class="features" aria-labelledby="feat-title">
-          <h2 id="feat-title">What you can do</h2>
-          <div class="grid">
-            <article class="card">
-              <h3>Quick pick</h3>
-              <p>Flip one card for a title matched to your language and preferences.</p>
-            </article>
-            <article class="card">
-              <h3>Save &amp; details</h3>
-              <p>Bookmark picks and jump into richer info when you need it.</p>
-            </article>
-            <article class="card">
-              <h3>Shake for another</h3>
-              <p>On supported devices, shake for another card without hunting for a button.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="screens" aria-labelledby="screens-title">
-          <h2 id="screens-title">In the app</h2>
-          <p>Flip a card, browse recent picks, and open details — then install NextBinge on Google Play.</p>
-          <div class="screen-grid">
-            <figure class="screen-card">
-              <img
-                src="images/screen-home-prompt.png"
-                width="320"
-                height="640"
-                alt="NextBinge home prompt — turn the card for a quick pick"
-              />
-              <figcaption>Turn the card</figcaption>
-            </figure>
-            <figure class="screen-card">
-              <img
-                src="images/screen-home-pick.png"
-                width="320"
-                height="640"
-                alt="NextBinge tonight’s pick with Save and Open details"
-              />
-              <figcaption>Tonight’s pick</figcaption>
-            </figure>
-            <figure class="screen-card">
-              <img
-                src="images/screen-discover.png"
-                width="320"
-                height="640"
-                alt="NextBinge Discover — recent picks list"
-              />
-              <figcaption>Recent picks</figcaption>
-            </figure>
-            <figure class="screen-card">
-              <img
-                src="images/screen-details.jpg"
-                width="320"
-                height="640"
-                alt="NextBinge details screen with overview and where to watch"
-              />
-              <figcaption>Title details</figcaption>
-            </figure>
-          </div>
-          <p class="download-band">
+    <main class="shell page">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">WhatWatchNext</p>
+          <h1 id="hero-title">Find something to watch, fast</h1>
+          <p class="lead">
+            Quick picks for what to watch — powered by <strong>NextBinge</strong>. Flip one card,
+            shake for another, save what you like.
+          </p>
+          <div class="cta-row">
             <a
               class="btn btn-primary"
               href="https://play.google.com/store/apps/details?id=com.nextbinge.app"
               rel="noopener noreferrer"
-              >Download NextBinge</a
+              >Get NextBinge on Google Play</a
             >
-          </p>
-        </section>
-      </div>
+            <a class="btn btn-secondary" href="privacy/index.html">Privacy policy</a>
+          </div>
+        </div>
+        <div class="mockup" aria-hidden="false">
+          <img
+            class="phone-shot"
+            src="images/screen-home-pick.png"
+            width="360"
+            height="780"
+            alt="NextBinge home screen showing tonight’s pick"
+          />
+        </div>
+      </section>
+
+      <section class="features" aria-labelledby="feat-title">
+        <h2 id="feat-title">What you can do</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Quick pick</h3>
+            <p>Flip one card for a title matched to your language and preferences.</p>
+          </article>
+          <article class="card">
+            <h3>Save &amp; details</h3>
+            <p>Bookmark picks and jump into richer info when you need it.</p>
+          </article>
+          <article class="card">
+            <h3>Shake for another</h3>
+            <p>On supported devices, shake for another card without hunting for a button.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="screens" aria-labelledby="screens-title">
+        <h2 id="screens-title">In the app</h2>
+        <p class="section-lead">
+          Flip a card, browse recent picks, and open details — then install NextBinge on Google Play.
+        </p>
+        <div class="screen-grid">
+          <figure class="screen-card">
+            <img
+              src="images/screen-home-prompt.png"
+              width="320"
+              height="640"
+              alt="NextBinge home prompt — turn the card for a quick pick"
+            />
+            <figcaption>Turn the card</figcaption>
+          </figure>
+          <figure class="screen-card">
+            <img
+              src="images/screen-home-pick.png"
+              width="320"
+              height="640"
+              alt="NextBinge tonight’s pick with Save and Open details"
+            />
+            <figcaption>Tonight’s pick</figcaption>
+          </figure>
+          <figure class="screen-card">
+            <img
+              src="images/screen-discover.png"
+              width="320"
+              height="640"
+              alt="NextBinge Discover — recent picks list"
+            />
+            <figcaption>Recent picks</figcaption>
+          </figure>
+          <figure class="screen-card">
+            <img
+              src="images/screen-details.jpg"
+              width="320"
+              height="640"
+              alt="NextBinge details screen with overview and where to watch"
+            />
+            <figcaption>Title details</figcaption>
+          </figure>
+        </div>
+        <p class="download-band">
+          <a
+            class="btn btn-primary"
+            href="https://play.google.com/store/apps/details?id=com.nextbinge.app"
+            rel="noopener noreferrer"
+            >Download NextBinge</a
+          >
+        </p>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <p>
-        © <span id="y"></span> NextBinge · Funnel:
-        <strong>WhatWatchNext</strong> ·
-        <a href="privacy/index.html">Privacy policy</a> ·
-        <a href="https://play.google.com/store/apps/details?id=com.nextbinge.app" rel="noopener noreferrer"
-          >Google Play</a
-        >
-      </p>
+      <div class="shell">
+        <p>
+          © <span id="y"></span> NextBinge · Funnel:
+          <strong>WhatWatchNext</strong> ·
+          <a href="privacy/index.html">Privacy policy</a> ·
+          <a href="https://play.google.com/store/apps/details?id=com.nextbinge.app" rel="noopener noreferrer"
+            >Google Play</a
+          >
+        </p>
+      </div>
     </footer>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();

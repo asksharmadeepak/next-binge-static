@@ -6,8 +6,8 @@
   --accent: #7b6dff;
   --border: #313b5f;
   --radius: 16px;
-  --max: 720px;
-  --wide: 1040px;
+  --gutter: 1.25rem;
+  --wide: 1080px;
 }
 
 *,
@@ -22,6 +22,7 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.55;
@@ -39,19 +40,22 @@ a:hover {
   color: #aba3ff;
 }
 
+.shell {
+  width: min(100% - (var(--gutter) * 2), var(--wide));
+  margin-inline: auto;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(14, 19, 34, 0.92);
+  background: rgba(14, 19, 34, 0.94);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
-.header-inner {
-  max-width: var(--wide);
-  margin: 0 auto;
-  padding: 0.85rem 1.25rem;
+.site-header .shell {
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,28 +65,39 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
-  line-height: 0;
+  color: var(--text);
+  min-width: 0;
 }
 
-.brand-wordmark {
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  object-fit: cover;
+  flex-shrink: 0;
   display: block;
-  height: 32px;
-  width: auto;
-  max-width: 180px;
-  object-fit: contain;
-  object-position: left center;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .brand:hover {
-  opacity: 0.9;
+  color: var(--text);
+  opacity: 0.92;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: flex-end;
+  gap: 0.35rem 1.1rem;
   font-size: 0.95rem;
 }
 
@@ -100,58 +115,47 @@ a:hover {
   color: var(--accent) !important;
 }
 
-main {
-  padding: 1.25rem 1.25rem 4rem;
-}
-
-.wrap {
-  max-width: var(--wide);
-  margin: 0 auto;
-}
-
-.narrow {
-  max-width: var(--max);
-  margin: 0 auto;
+.page {
+  padding: 1.5rem 0 4rem;
 }
 
 .hero {
   display: grid;
   gap: 2rem;
-  align-items: start;
-  padding: 1.25rem 0 2.5rem;
+  align-items: center;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 900px) {
   .hero {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 2.5rem;
-    padding: 1.5rem 0 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+    gap: 3rem;
+    min-height: min(68vh, 640px);
   }
 }
 
 .hero-copy {
-  padding-top: 0.25rem;
-}
-
-.hero h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.85rem, 4vw, 2.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  max-width: 34rem;
 }
 
 .eyebrow {
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
+.hero h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2rem, 4.2vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
 .lead {
   margin: 0 0 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: var(--muted);
 }
 
@@ -170,7 +174,7 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.15rem;
+  padding: 0.7rem 1.2rem;
   font-weight: 700;
   font-size: 0.95rem;
   border-radius: 12px;
@@ -200,43 +204,44 @@ main {
   border-color: var(--muted);
 }
 
-.download-band {
-  margin-top: 1.75rem;
-  text-align: center;
-}
-
 .mockup {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 900px) {
   .mockup {
     justify-content: flex-end;
   }
 }
 
 .mockup .phone-shot {
-  /* Screenshots already include a device frame — do not add a second radius/border. */
   width: min(100%, 300px);
   height: auto;
+  display: block;
   border: none;
   border-radius: 0;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   background: transparent;
-  display: block;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.5);
 }
 
 .features {
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
 }
 
-.features h2 {
-  margin: 0 0 1rem;
+.features h2,
+.screens h2 {
+  margin: 0 0 0.75rem;
   font-size: 1.35rem;
+}
+
+.section-lead {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 40rem;
 }
 
 .grid {
@@ -244,9 +249,9 @@ main {
   gap: 1rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 700px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -255,6 +260,7 @@ main {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  height: 100%;
 }
 
 .card h3 {
@@ -272,48 +278,51 @@ main {
   margin-top: 3rem;
 }
 
-.screens h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.35rem;
-}
-
-.screens > p {
-  margin: 0 0 1.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .screen-grid {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 900px) {
+  .screen-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .screen-card {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .screen-card img {
   width: 100%;
+  max-width: 240px;
   height: auto;
   display: block;
-  /* Same as hero: assets are already framed phones */
   border: none;
   border-radius: 0;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   background: transparent;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
 }
 
 .screen-card figcaption {
-  margin-top: 0.55rem;
+  margin-top: 0.65rem;
   text-align: center;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--muted);
 }
 
+.download-band {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .site-footer {
-  padding: 2rem 1.25rem;
+  padding: 1.75rem 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.9rem;
@@ -324,10 +333,8 @@ main {
   font-weight: 600;
 }
 
-/* Privacy page */
 .prose {
   max-width: 42rem;
-  margin: 0 auto;
 }
 
 .prose h1 {

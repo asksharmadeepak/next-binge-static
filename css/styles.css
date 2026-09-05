@@ -218,12 +218,14 @@ main {
 }
 
 .mockup .phone-shot {
+  /* Screenshots already include a device frame — do not add a second radius/border. */
   width: min(100%, 300px);
   height: auto;
-  border-radius: 28px;
-  border: 1px solid var(--border);
+  border: none;
+  border-radius: 0;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  background: var(--surface);
+  background: transparent;
+  display: block;
 }
 
 .features {
@@ -295,10 +297,11 @@ main {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px;
-  border: 1px solid var(--border);
+  /* Same as hero: assets are already framed phones */
+  border: none;
+  border-radius: 0;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  background: var(--surface);
+  background: transparent;
 }
 
 .screen-card figcaption {

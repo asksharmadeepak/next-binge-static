@@ -43,68 +43,39 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 1.25rem;
   background: rgba(14, 19, 34, 0.92);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
 }
 
+.header-inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .brand {
   display: inline-flex;
-  flex-direction: row;
   align-items: center;
-  gap: 0.65rem;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  color: var(--text);
   text-decoration: none;
-  line-height: 1.15;
-}
-
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-}
-
-.brand-text {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  min-width: 0;
+  line-height: 0;
 }
 
 .brand-wordmark {
   display: block;
-  height: 26px;
+  height: 32px;
   width: auto;
-  max-width: 160px;
+  max-width: 180px;
   object-fit: contain;
   object-position: left center;
 }
 
-.brand-tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-  color: var(--muted);
-}
-
 .brand:hover {
-  color: var(--accent);
-}
-
-.brand:hover .brand-tag {
-  color: #aba3ff;
+  opacity: 0.9;
 }
 
 .nav {
@@ -130,7 +101,7 @@ a:hover {
 }
 
 main {
-  padding: 2rem 1.25rem 4rem;
+  padding: 1.25rem 1.25rem 4rem;
 }
 
 .wrap {
@@ -146,15 +117,20 @@ main {
 .hero {
   display: grid;
   gap: 2rem;
-  align-items: center;
-  padding: 2rem 0 3rem;
+  align-items: start;
+  padding: 1.25rem 0 2.5rem;
 }
 
 @media (min-width: 880px) {
   .hero {
-    grid-template-columns: 1fr 1fr;
-    padding: 3rem 0 4rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.5rem;
+    padding: 1.5rem 0 3rem;
   }
+}
+
+.hero-copy {
+  padding-top: 0.25rem;
 }
 
 .hero h1 {
@@ -232,10 +208,17 @@ main {
 .mockup {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-width: 880px) {
+  .mockup {
+    justify-content: flex-end;
+  }
 }
 
 .mockup .phone-shot {
-  width: min(100%, 320px);
+  width: min(100%, 300px);
   height: auto;
   border-radius: 28px;
   border: 1px solid var(--border);

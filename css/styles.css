@@ -333,6 +333,14 @@ a:hover {
   font-weight: 600;
 }
 
+.site-footer .footer-more {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+
 .prose {
   max-width: 42rem;
 }
